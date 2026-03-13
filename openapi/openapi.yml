@@ -1,0 +1,306 @@
+openapi: 3.1.0
+info:
+  title: Google Cloud Armor API
+  description: >-
+    Provides programmatic access to manage security policies, rules, and threat
+    intelligence configurations for protecting applications from DDoS attacks
+    and web-based threats.
+  version: v1
+  contact:
+    name: Google Cloud
+    url: https://cloud.google.com/armor/docs
+servers:
+  - url: https://compute.googleapis.com/compute/v1
+    description: Google Cloud Armor production endpoint
+tags:
+  - name: SecurityPolicies
+    description: Manage security policies for Cloud Armor
+  - name: SecurityPolicyRules
+    description: Manage individual rules within security policies
+paths:
+  /projects/{project}/global/securityPolicies:
+    get:
+      operationId: listSecurityPolicies
+      summary: List security policies
+      description: Retrieves the list of security policies available to the specified project.
+      tags:
+        - SecurityPolicies
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SecurityPolicyList'
+    post:
+      operationId: createSecurityPolicy
+      summary: Create a security policy
+      description: Creates a security policy in the specified project.
+      tags:
+        - SecurityPolicies
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SecurityPolicy'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+  /projects/{project}/global/securityPolicies/{securityPolicy}:
+    get:
+      operationId: getSecurityPolicy
+      summary: Get a security policy
+      description: Returns the specified security policy resource.
+      tags:
+        - SecurityPolicies
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: securityPolicy
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SecurityPolicy'
+    patch:
+      operationId: patchSecurityPolicy
+      summary: Update a security policy
+      description: Patches the specified security policy with the data included in the request.
+      tags:
+        - SecurityPolicies
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: securityPolicy
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SecurityPolicy'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+    delete:
+      operationId: deleteSecurityPolicy
+      summary: Delete a security policy
+      description: Deletes the specified security policy.
+      tags:
+        - SecurityPolicies
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: securityPolicy
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+  /projects/{project}/global/securityPolicies/{securityPolicy}/addRule:
+    post:
+      operationId: addSecurityPolicyRule
+      summary: Add a rule to a security policy
+      description: Adds a rule to the specified security policy.
+      tags:
+        - SecurityPolicyRules
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: securityPolicy
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SecurityPolicyRule'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+  /projects/{project}/global/securityPolicies/{securityPolicy}/removeRule:
+    post:
+      operationId: removeSecurityPolicyRule
+      summary: Remove a rule from a security policy
+      description: Removes a rule from the specified security policy.
+      tags:
+        - SecurityPolicyRules
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: securityPolicy
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: priority
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+components:
+  schemas:
+    SecurityPolicy:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the resource
+        name:
+          type: string
+          description: Name of the security policy
+        description:
+          type: string
+          description: An optional description of the security policy
+        rules:
+          type: array
+          items:
+            $ref: '#/components/schemas/SecurityPolicyRule'
+          description: List of rules in this security policy
+        type:
+          type: string
+          enum:
+            - CLOUD_ARMOR
+            - CLOUD_ARMOR_EDGE
+          description: The type of security policy
+        selfLink:
+          type: string
+          description: Server-defined URL for the resource
+    SecurityPolicyRule:
+      type: object
+      properties:
+        priority:
+          type: integer
+          description: Priority of the rule (lower number = higher priority)
+        description:
+          type: string
+          description: An optional description of the rule
+        match:
+          type: object
+          properties:
+            versionedExpr:
+              type: string
+              enum:
+                - SRC_IPS_V1
+            config:
+              type: object
+              properties:
+                srcIpRanges:
+                  type: array
+                  items:
+                    type: string
+            expr:
+              type: object
+              properties:
+                expression:
+                  type: string
+                  description: CEL expression for matching
+        action:
+          type: string
+          enum:
+            - allow
+            - deny(403)
+            - deny(404)
+            - deny(502)
+            - throttle
+            - rate_based_ban
+          description: Action to take when the rule matches
+        preview:
+          type: boolean
+          description: Whether the rule is in preview mode
+    SecurityPolicyList:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/SecurityPolicy'
+    Operation:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        status:
+          type: string
+        targetLink:
+          type: string
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/compute: Manage your Google Compute Engine resources
+            https://www.googleapis.com/auth/cloud-platform: Full access to Google Cloud Platform resources
+security:
+  - oauth2:
+      - https://www.googleapis.com/auth/compute

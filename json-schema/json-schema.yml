@@ -1,0 +1,89 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://raw.githubusercontent.com/api-evangelist/google-cloud-armor/refs/heads/main/json-schema/json-schema.yml
+title: Google Cloud Armor Security Policy
+description: A security policy resource for Google Cloud Armor
+type: object
+properties:
+  id:
+    type: string
+    description: Unique identifier for the resource
+  name:
+    type: string
+    description: Name of the security policy
+    pattern: ^[a-z]([-a-z0-9]*[a-z0-9])?$
+  description:
+    type: string
+    description: An optional description of the security policy
+  type:
+    type: string
+    enum:
+      - CLOUD_ARMOR
+      - CLOUD_ARMOR_EDGE
+    description: The type of Cloud Armor security policy
+  rules:
+    type: array
+    items:
+      type: object
+      properties:
+        priority:
+          type: integer
+          minimum: 0
+          maximum: 2147483647
+          description: Rule priority, lower number means higher priority
+        description:
+          type: string
+          description: Description of the rule
+        match:
+          type: object
+          properties:
+            versionedExpr:
+              type: string
+              enum:
+                - SRC_IPS_V1
+            config:
+              type: object
+              properties:
+                srcIpRanges:
+                  type: array
+                  items:
+                    type: string
+            expr:
+              type: object
+              properties:
+                expression:
+                  type: string
+                  description: CEL expression for advanced matching
+        action:
+          type: string
+          description: Action to take when the rule matches
+        preview:
+          type: boolean
+          description: If true, the rule is not enforced
+      required:
+        - priority
+        - action
+    description: List of rules in this security policy
+  adaptiveProtectionConfig:
+    type: object
+    properties:
+      layer7DdosDefenseConfig:
+        type: object
+        properties:
+          enable:
+            type: boolean
+          ruleVisibility:
+            type: string
+            enum:
+              - STANDARD
+              - PREMIUM
+    description: Adaptive protection configuration
+  selfLink:
+    type: string
+    format: uri
+    description: Server-defined URL for the resource
+  creationTimestamp:
+    type: string
+    format: date-time
+    description: Timestamp when the resource was created
+required:
+  - name

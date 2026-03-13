@@ -1,0 +1,35 @@
+"@context":
+  "@vocab": https://schema.org/
+  gcp: https://cloud.google.com/armor/docs/reference/rest/v1/
+  xsd: http://www.w3.org/2001/XMLSchema#
+  dcterms: http://purl.org/dc/terms/
+  SecurityPolicy:
+    "@id": gcp:securityPolicies
+    "@type": "@id"
+  name:
+    "@id": schema:name
+    "@type": xsd:string
+  description:
+    "@id": schema:description
+    "@type": xsd:string
+  rules:
+    "@id": gcp:rules
+    "@container": "@list"
+  priority:
+    "@id": gcp:priority
+    "@type": xsd:integer
+  action:
+    "@id": gcp:action
+    "@type": xsd:string
+  match:
+    "@id": gcp:match
+    "@type": "@id"
+  type:
+    "@id": gcp:type
+    "@type": xsd:string
+  dateCreated:
+    "@id": dcterms:created
+    "@type": xsd:dateTime
+  dateModified:
+    "@id": dcterms:modified
+    "@type": xsd:dateTime
