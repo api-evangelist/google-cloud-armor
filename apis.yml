@@ -12,11 +12,11 @@ modified: '2026-03-16'
 specificationVersion: '0.19'
 type: Index
 tags:
-  - Security
   - DDoS Protection
-  - WAF
-  - Google Cloud
   - Firewall
+  - Google Cloud
+  - Security
+  - WAF
 apis:
   - name: Google Cloud Armor API
     description: >-
@@ -27,10 +27,10 @@ apis:
     humanURL: https://cloud.google.com/armor/docs
     baseURL: https://compute.googleapis.com/compute/v1
     tags:
-      - Security Policies
       - DDoS Protection
-      - WAF Rules
+      - Security Policies
       - Threat Intelligence
+      - WAF Rules
     properties:
       - type: Documentation
         url: https://cloud.google.com/armor/docs/reference/rest
