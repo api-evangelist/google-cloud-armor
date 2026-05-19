@@ -1,0 +1,145 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Cloud Armor API — SecurityPolicyRules
+  description: 'Google Cloud Armor API — SecurityPolicyRules. 2 operations. Lead operation: Google Cloud Armor Add a rule
+    to a security policy. Self-contained Naftiko capability covering one Google Cloud Armor business surface.'
+  tags:
+  - Google Cloud Armor
+  - SecurityPolicyRules
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CLOUD_ARMOR_API_KEY: GOOGLE_CLOUD_ARMOR_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: openapi-securitypolicyrules
+    baseUri: https://compute.googleapis.com/compute/v1
+    description: Google Cloud Armor API — SecurityPolicyRules business capability. Self-contained, no shared references.
+    resources:
+    - name: projects-project-global-securityPolicies-securityPolicy-addRule
+      path: /projects/{project}/global/securityPolicies/{securityPolicy}/addRule
+      operations:
+      - name: addsecuritypolicyrule
+        method: POST
+        description: Google Cloud Armor Add a rule to a security policy
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: securityPolicy
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: projects-project-global-securityPolicies-securityPolicy-removeRule
+      path: /projects/{project}/global/securityPolicies/{securityPolicy}/removeRule
+      operations:
+      - name: removesecuritypolicyrule
+        method: POST
+        description: Google Cloud Armor Remove a rule from a security policy
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: securityPolicy
+          in: path
+          type: string
+          required: true
+        - name: priority
+          in: query
+          type: integer
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.GOOGLE_CLOUD_ARMOR_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: openapi-securitypolicyrules-rest
+    port: 8080
+    description: REST adapter for Google Cloud Armor API — SecurityPolicyRules. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/projects/{project}/global/securitypolicies/{securitypolicy}/addrule
+      name: projects-project-global-securitypolicies-securitypolicy-addrule
+      description: REST surface for projects-project-global-securityPolicies-securityPolicy-addRule.
+      operations:
+      - method: POST
+        name: addsecuritypolicyrule
+        description: Google Cloud Armor Add a rule to a security policy
+        call: openapi-securitypolicyrules.addsecuritypolicyrule
+        with:
+          project: rest.project
+          securityPolicy: rest.securityPolicy
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/projects/{project}/global/securitypolicies/{securitypolicy}/removerule
+      name: projects-project-global-securitypolicies-securitypolicy-removerule
+      description: REST surface for projects-project-global-securityPolicies-securityPolicy-removeRule.
+      operations:
+      - method: POST
+        name: removesecuritypolicyrule
+        description: Google Cloud Armor Remove a rule from a security policy
+        call: openapi-securitypolicyrules.removesecuritypolicyrule
+        with:
+          project: rest.project
+          securityPolicy: rest.securityPolicy
+          priority: rest.priority
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: openapi-securitypolicyrules-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Cloud Armor API — SecurityPolicyRules. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: google-cloud-armor-add-rule
+      description: Google Cloud Armor Add a rule to a security policy
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: openapi-securitypolicyrules.addsecuritypolicyrule
+      with:
+        project: tools.project
+        securityPolicy: tools.securityPolicy
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-armor-remove-rule
+      description: Google Cloud Armor Remove a rule from a security policy
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: openapi-securitypolicyrules.removesecuritypolicyrule
+      with:
+        project: tools.project
+        securityPolicy: tools.securityPolicy
+        priority: tools.priority
+      outputParameters:
+      - type: object
+        mapping: $.
