@@ -9,65 +9,67 @@ modified: '2026-05-19'
 specificationVersion: '0.19'
 type: Index
 tags:
-- DDoS Protection
-- Firewall
-- Google Cloud
-- Security
-- WAF
-apis:
-- name: Google Cloud Armor API
-  description: The Google Cloud Armor API enables programmatic management of security policies, rules, and threat intelligence
-    configurations to protect applications from DDoS attacks and web-based threats.
-  image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-  humanURL: https://cloud.google.com/armor/docs
-  baseURL: https://compute.googleapis.com/compute/v1
-  tags:
   - DDoS Protection
-  - Security Policies
-  - Threat Intelligence
-  - WAF Rules
-  properties:
-  - type: Documentation
-    url: https://cloud.google.com/armor/docs/reference/rest
-  - type: OpenAPI
-    url: openapi/openapi.yml
-  - type: Authentication
-    url: https://cloud.google.com/docs/authentication
+  - Firewall
+  - Google Cloud
+  - Security
+  - WAF
+apis:
+  - name: Google Cloud Armor API
+    description: The Google Cloud Armor API enables programmatic management of security policies, rules, and threat intelligence
+      configurations to protect applications from DDoS attacks and web-based threats.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://cloud.google.com/armor/docs
+    baseURL: https://compute.googleapis.com/compute/v1
+    tags:
+    - DDoS Protection
+    - Security Policies
+    - Threat Intelligence
+    - WAF Rules
+    properties:
+    - type: Documentation
+      url: https://cloud.google.com/armor/docs/reference/rest
+    - type: OpenAPI
+      url: openapi/openapi.yml
+    - type: Authentication
+      url: https://cloud.google.com/docs/authentication
+    - type: GettingStarted
+      url: https://cloud.google.com/armor/docs/configure-security-policies
+    - type: JSONSchema
+      url: json-schema/json-schema.yml
+    - type: JSONLDContext
+      url: json-ld/json-ld.yml
+    - type: NaftikoCapability
+      url: capabilities/openapi-securitypolicies.yaml
+    - type: NaftikoCapability
+      url: capabilities/openapi-securitypolicyrules.yaml
+common:
+  - type: GitHubOrganization
+    url: https://github.com/GoogleCloudPlatform
+  - type: Portal
+    url: https://cloud.google.com/armor
   - type: GettingStarted
     url: https://cloud.google.com/armor/docs/configure-security-policies
-  - type: JSONSchema
-    url: json-schema/json-schema.yml
+  - type: Documentation
+    url: https://cloud.google.com/armor/docs
+  - type: Authentication
+    url: https://cloud.google.com/docs/authentication
+  - type: Pricing
+    url: https://cloud.google.com/armor/pricing
+  - type: TermsOfService
+    url: https://cloud.google.com/terms
+  - type: PrivacyPolicy
+    url: https://policies.google.com/privacy
+  - type: StatusPage
+    url: https://status.cloud.google.com/
+  - type: Support
+    url: https://cloud.google.com/armor/docs/support
   - type: JSONLDContext
     url: json-ld/json-ld.yml
-  - type: NaftikoCapability
-    url: capabilities/openapi-securitypolicies.yaml
-  - type: NaftikoCapability
-    url: capabilities/openapi-securitypolicyrules.yaml
-common:
-- type: Portal
-  url: https://cloud.google.com/armor
-- type: GettingStarted
-  url: https://cloud.google.com/armor/docs/configure-security-policies
-- type: Documentation
-  url: https://cloud.google.com/armor/docs
-- type: Authentication
-  url: https://cloud.google.com/docs/authentication
-- type: Pricing
-  url: https://cloud.google.com/armor/pricing
-- type: TermsOfService
-  url: https://cloud.google.com/terms
-- type: PrivacyPolicy
-  url: https://policies.google.com/privacy
-- type: StatusPage
-  url: https://status.cloud.google.com/
-- type: Support
-  url: https://cloud.google.com/armor/docs/support
-- type: JSONLDContext
-  url: json-ld/json-ld.yml
-- type: Integrations
-  url: https://cloud.google.com/marketplace
+  - type: Integrations
+    url: https://cloud.google.com/marketplace
 integrations:
-- name: Become a Partner
+  - name: Become a Partner
 maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+  - FN: Kin Lane
+    email: kin@apievangelist.com
