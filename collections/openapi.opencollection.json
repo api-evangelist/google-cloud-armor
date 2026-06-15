@@ -1,0 +1,206 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Cloud Armor API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+      "accessTokenUrl": "https://oauth2.googleapis.com/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "SecurityPolicies",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Armor List security policies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://compute.googleapis.com/compute/v1/projects/:project/global/securityPolicies",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieves the list of security policies available to the specified project."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Armor Create a security policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://compute.googleapis.com/compute/v1/projects/:project/global/securityPolicies",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a security policy in the specified project."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Armor Get a security policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://compute.googleapis.com/compute/v1/projects/:project/global/securityPolicies/:securityPolicy",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "securityPolicy",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns the specified security policy resource."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Armor Update a security policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://compute.googleapis.com/compute/v1/projects/:project/global/securityPolicies/:securityPolicy",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "securityPolicy",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Patches the specified security policy with the data included in the request."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Armor Delete a security policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://compute.googleapis.com/compute/v1/projects/:project/global/securityPolicies/:securityPolicy",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "securityPolicy",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes the specified security policy."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "SecurityPolicyRules",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Armor Add a rule to a security policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://compute.googleapis.com/compute/v1/projects/:project/global/securityPolicies/:securityPolicy/addRule",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "securityPolicy",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Adds a rule to the specified security policy."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Armor Remove a rule from a security policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://compute.googleapis.com/compute/v1/projects/:project/global/securityPolicies/:securityPolicy/removeRule",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "securityPolicy",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "priority",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Removes a rule from the specified security policy."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
