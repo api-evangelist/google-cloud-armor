@@ -42,6 +42,12 @@ apis:
       - type: JSONLDContext
         url: json-ld/json-ld.yml
 common:
+  - type: VulnerabilityDisclosure
+    url: security/google-cloud-armor-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/google-cloud-armor-domain-security.yml
+  - type: Authentication
+    url: authentication/google-cloud-armor-authentication.yml
   - type: OAuthScopes
     url: scopes/google-cloud-armor-scopes.yml
   - type: GitHubOrganization
