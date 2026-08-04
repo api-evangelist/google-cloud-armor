@@ -1,0 +1,16 @@
+{
+  "provider": "google-cloud-armor",
+  "sources": [
+    "google-cloud-armor-securitypolicies-api-openapi.yml",
+    "google-cloud-armor-securitypolicyrules-api-openapi.yml"
+  ],
+  "outputs": [
+    "google-cloud-armor-securitypolicies-api-openapi.yml",
+    "google-cloud-armor-securitypolicyrules-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

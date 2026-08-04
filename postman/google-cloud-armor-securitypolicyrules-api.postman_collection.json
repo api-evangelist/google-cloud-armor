@@ -1,0 +1,360 @@
+{
+  "info": {
+    "_postman_id": "acd62ec8-e909-4f38-84bf-23825a8d18f4",
+    "name": "Google Cloud Armor SecurityPolicies SecurityPolicyRules API",
+    "description": "Provides programmatic access to manage security policies, rules, and threat intelligence configurations for protecting applications from DDoS attacks and web-based threats.\n\nContact Support:\n Name: Google Cloud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:45:53.000Z",
+    "updatedAt": "2026-07-28T01:45:53.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-acd62ec8-e909-4f38-84bf-23825a8d18f4"
+  },
+  "item": [
+    {
+      "name": "projects",
+      "item": [
+        {
+          "name": "{project}",
+          "item": [
+            {
+              "name": "global",
+              "item": [
+                {
+                  "name": "securityPolicies",
+                  "item": [
+                    {
+                      "name": "{securityPolicy}",
+                      "item": [
+                        {
+                          "name": "addRule",
+                          "item": [
+                            {
+                              "name": "Google Cloud Armor Add a rule to a security policy",
+                              "id": "a4ab03cc-f0bb-45ff-8a26-b3f62afbfc50",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"priority\": \"<integer>\",\n  \"description\": \"<string>\",\n  \"match\": {\n    \"versionedExpr\": \"SRC_IPS_V1\",\n    \"config\": {\n      \"srcIpRanges\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"expr\": {\n      \"expression\": \"<string>\"\n    }\n  },\n  \"action\": \"deny(404)\",\n  \"preview\": \"<boolean>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:project/global/securityPolicies/:securityPolicy/addRule",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":project",
+                                    "global",
+                                    "securityPolicies",
+                                    ":securityPolicy",
+                                    "addRule"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "167c91de-5670-4d5e-a86b-f051245836a4",
+                                      "key": "project",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "df0cc5c9-11ab-40d1-959b-e8a7c3dfb053",
+                                      "key": "securityPolicy",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Adds a rule to the specified security policy."
+                              },
+                              "response": [
+                                {
+                                  "id": "252c3927-48cb-4605-8aab-a4768f031f49",
+                                  "name": "Successful response",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"priority\": \"<integer>\",\n  \"description\": \"<string>\",\n  \"match\": {\n    \"versionedExpr\": \"SRC_IPS_V1\",\n    \"config\": {\n      \"srcIpRanges\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"expr\": {\n      \"expression\": \"<string>\"\n    }\n  },\n  \"action\": \"deny(404)\",\n  \"preview\": \"<boolean>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/projects/:project/global/securityPolicies/:securityPolicy/addRule",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "projects",
+                                        ":project",
+                                        "global",
+                                        "securityPolicies",
+                                        ":securityPolicy",
+                                        "addRule"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "project"
+                                        },
+                                        {
+                                          "key": "securityPolicy"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"status\": \"<string>\",\n  \"targetLink\": \"<string>\"\n}",
+                                  "createdAt": "2026-07-28T01:45:53.000Z",
+                                  "updatedAt": "2026-07-28T01:45:53.000Z",
+                                  "uid": "35240-252c3927-48cb-4605-8aab-a4768f031f49"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:45:53.000Z",
+                              "updatedAt": "2026-07-28T01:45:53.000Z",
+                              "uid": "35240-a4ab03cc-f0bb-45ff-8a26-b3f62afbfc50"
+                            }
+                          ],
+                          "id": "d7c364ef-62ef-4f36-a5e9-6e203478eb1e",
+                          "createdAt": "2026-07-28T01:45:53.000Z",
+                          "updatedAt": "2026-07-28T01:45:53.000Z",
+                          "uid": "35240-d7c364ef-62ef-4f36-a5e9-6e203478eb1e"
+                        },
+                        {
+                          "name": "removeRule",
+                          "item": [
+                            {
+                              "name": "Google Cloud Armor Remove a rule from a security policy",
+                              "id": "51983b79-3561-4ac8-9188-fdef863fb049",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:project/global/securityPolicies/:securityPolicy/removeRule?priority=<integer>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":project",
+                                    "global",
+                                    "securityPolicies",
+                                    ":securityPolicy",
+                                    "removeRule"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "(Required) ",
+                                      "key": "priority",
+                                      "value": "<integer>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "52cd0438-6471-4f6f-9d62-5b5d70fb2acb",
+                                      "key": "project",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "966500e4-1681-4777-a8dc-a0b512115e17",
+                                      "key": "securityPolicy",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Removes a rule from the specified security policy."
+                              },
+                              "response": [
+                                {
+                                  "id": "01645b2f-8998-4f0b-a8a3-e8b8a7dd6907",
+                                  "name": "Successful response",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/projects/:project/global/securityPolicies/:securityPolicy/removeRule?priority=<integer>",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "projects",
+                                        ":project",
+                                        "global",
+                                        "securityPolicies",
+                                        ":securityPolicy",
+                                        "removeRule"
+                                      ],
+                                      "query": [
+                                        {
+                                          "description": "(Required) ",
+                                          "key": "priority",
+                                          "value": "<integer>"
+                                        }
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "project"
+                                        },
+                                        {
+                                          "key": "securityPolicy"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"status\": \"<string>\",\n  \"targetLink\": \"<string>\"\n}",
+                                  "createdAt": "2026-07-28T01:45:53.000Z",
+                                  "updatedAt": "2026-07-28T01:45:53.000Z",
+                                  "uid": "35240-01645b2f-8998-4f0b-a8a3-e8b8a7dd6907"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:45:53.000Z",
+                              "updatedAt": "2026-07-28T01:45:53.000Z",
+                              "uid": "35240-51983b79-3561-4ac8-9188-fdef863fb049"
+                            }
+                          ],
+                          "id": "8c9895eb-33d5-4640-b053-e4e3950b578c",
+                          "createdAt": "2026-07-28T01:45:53.000Z",
+                          "updatedAt": "2026-07-28T01:45:53.000Z",
+                          "uid": "35240-8c9895eb-33d5-4640-b053-e4e3950b578c"
+                        }
+                      ],
+                      "id": "082d437c-af60-419a-8719-f63810ca0036",
+                      "createdAt": "2026-07-28T01:45:53.000Z",
+                      "updatedAt": "2026-07-28T01:45:53.000Z",
+                      "uid": "35240-082d437c-af60-419a-8719-f63810ca0036"
+                    }
+                  ],
+                  "id": "59b1d769-d98c-4bfb-a1d7-1caf64b53a6f",
+                  "createdAt": "2026-07-28T01:45:53.000Z",
+                  "updatedAt": "2026-07-28T01:45:53.000Z",
+                  "uid": "35240-59b1d769-d98c-4bfb-a1d7-1caf64b53a6f"
+                }
+              ],
+              "id": "b43a692b-7df4-4dc2-8359-2e771208a6a2",
+              "createdAt": "2026-07-28T01:45:53.000Z",
+              "updatedAt": "2026-07-28T01:45:53.000Z",
+              "uid": "35240-b43a692b-7df4-4dc2-8359-2e771208a6a2"
+            }
+          ],
+          "id": "d9412aa7-e2d6-4b62-a5a1-46aeab367683",
+          "createdAt": "2026-07-28T01:45:53.000Z",
+          "updatedAt": "2026-07-28T01:45:53.000Z",
+          "uid": "35240-d9412aa7-e2d6-4b62-a5a1-46aeab367683"
+        }
+      ],
+      "id": "9a9b3a94-9cda-4751-9e78-e6f4a16042dd",
+      "createdAt": "2026-07-28T01:45:53.000Z",
+      "updatedAt": "2026-07-28T01:45:53.000Z",
+      "uid": "35240-9a9b3a94-9cda-4751-9e78-e6f4a16042dd"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/compute https://www.googleapis.com/auth/cloud-platform",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://compute.googleapis.com/compute/v1"
+    }
+  ]
+}
