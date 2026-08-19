@@ -1,0 +1,643 @@
+{
+  "item": [
+    {
+      "id": "1ba58d47-6f14-4ae5-be96-358ede4f90d0",
+      "name": "SecurityPolicies",
+      "description": {
+        "content": "Manage security policies for Cloud Armor",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "269cd7d9-fa9d-4aa3-b5a4-1bbe1e4ef792",
+          "name": "Google Cloud Armor List security policies",
+          "request": {
+            "name": "Google Cloud Armor List security policies",
+            "description": {
+              "content": "Retrieves the list of security policies available to the specified project.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "global",
+                "securityPolicies"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "95e43cf4-2e03-4b33-93f1-db5913d22f4a",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "global",
+                    "securityPolicies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"rules\": [\n        {\n          \"priority\": 8426,\n          \"description\": \"string\",\n          \"match\": {\n            \"versionedExpr\": \"SRC_IPS_V1\",\n            \"config\": {\n              \"srcIpRanges\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ]\n            },\n            \"expr\": {\n              \"expression\": \"string\"\n            }\n          },\n          \"action\": \"deny(404)\",\n          \"preview\": false\n        },\n        {\n          \"priority\": 1481,\n          \"description\": \"string\",\n          \"match\": {\n            \"versionedExpr\": \"SRC_IPS_V1\",\n            \"config\": {\n              \"srcIpRanges\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ]\n            },\n            \"expr\": {\n              \"expression\": \"string\"\n            }\n          },\n          \"action\": \"throttle\",\n          \"preview\": true\n        }\n      ],\n      \"type\": \"CLOUD_ARMOR_EDGE\",\n      \"selfLink\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"rules\": [\n        {\n          \"priority\": 9303,\n          \"description\": \"string\",\n          \"match\": {\n            \"versionedExpr\": \"SRC_IPS_V1\",\n            \"config\": {\n              \"srcIpRanges\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ]\n            },\n            \"expr\": {\n              \"expression\": \"string\"\n            }\n          },\n          \"action\": \"throttle\",\n          \"preview\": false\n        },\n        {\n          \"priority\": 3148,\n          \"description\": \"string\",\n          \"match\": {\n            \"versionedExpr\": \"SRC_IPS_V1\",\n            \"config\": {\n              \"srcIpRanges\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ]\n            },\n            \"expr\": {\n              \"expression\": \"string\"\n            }\n          },\n          \"action\": \"deny(502)\",\n          \"preview\": false\n        }\n      ],\n      \"type\": \"CLOUD_ARMOR_EDGE\",\n      \"selfLink\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2c2664d9-c3d3-4796-af3a-11e34823722d",
+          "name": "Google Cloud Armor Create a security policy",
+          "request": {
+            "name": "Google Cloud Armor Create a security policy",
+            "description": {
+              "content": "Creates a security policy in the specified project.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "global",
+                "securityPolicies"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"rules\": [\n    {\n      \"priority\": \"<integer>\",\n      \"description\": \"<string>\",\n      \"match\": {\n        \"versionedExpr\": \"<string>\",\n        \"config\": {\n          \"srcIpRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        \"expr\": {\n          \"expression\": \"<string>\"\n        }\n      },\n      \"action\": \"<string>\",\n      \"preview\": \"<boolean>\"\n    },\n    {\n      \"priority\": \"<integer>\",\n      \"description\": \"<string>\",\n      \"match\": {\n        \"versionedExpr\": \"<string>\",\n        \"config\": {\n          \"srcIpRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        \"expr\": {\n          \"expression\": \"<string>\"\n        }\n      },\n      \"action\": \"<string>\",\n      \"preview\": \"<boolean>\"\n    }\n  ],\n  \"type\": \"<string>\",\n  \"selfLink\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4699d5c5-0e59-470c-8a71-c417b0b93279",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "global",
+                    "securityPolicies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"rules\": [\n    {\n      \"priority\": 256,\n      \"description\": \"string\",\n      \"match\": {\n        \"versionedExpr\": \"SRC_IPS_V1\",\n        \"config\": {\n          \"srcIpRanges\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"expr\": {\n          \"expression\": \"string\"\n        }\n      },\n      \"action\": \"allow\",\n      \"preview\": true\n    },\n    {\n      \"priority\": 4728,\n      \"description\": \"string\",\n      \"match\": {\n        \"versionedExpr\": \"SRC_IPS_V1\",\n        \"config\": {\n          \"srcIpRanges\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"expr\": {\n          \"expression\": \"string\"\n        }\n      },\n      \"action\": \"deny(502)\",\n      \"preview\": false\n    }\n  ],\n  \"type\": \"<string>\",\n  \"selfLink\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"status\": \"string\",\n  \"targetLink\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "03b3c503-d551-48d1-828b-073944edac24",
+          "name": "Google Cloud Armor Get a security policy",
+          "request": {
+            "name": "Google Cloud Armor Get a security policy",
+            "description": {
+              "content": "Returns the specified security policy resource.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "global",
+                "securityPolicies",
+                ":securityPolicy"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "securityPolicy",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fe3ffb91-ec44-4f1d-8549-ba82417a8b47",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "global",
+                    "securityPolicies",
+                    ":securityPolicy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "securityPolicy",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"rules\": [\n    {\n      \"priority\": 2587,\n      \"description\": \"string\",\n      \"match\": {\n        \"versionedExpr\": \"SRC_IPS_V1\",\n        \"config\": {\n          \"srcIpRanges\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"expr\": {\n          \"expression\": \"string\"\n        }\n      },\n      \"action\": \"allow\",\n      \"preview\": true\n    },\n    {\n      \"priority\": 4388,\n      \"description\": \"string\",\n      \"match\": {\n        \"versionedExpr\": \"SRC_IPS_V1\",\n        \"config\": {\n          \"srcIpRanges\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"expr\": {\n          \"expression\": \"string\"\n        }\n      },\n      \"action\": \"throttle\",\n      \"preview\": true\n    }\n  ],\n  \"type\": \"CLOUD_ARMOR\",\n  \"selfLink\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b8dd1c5a-9607-4516-96c9-732f52ba0adf",
+          "name": "Google Cloud Armor Update a security policy",
+          "request": {
+            "name": "Google Cloud Armor Update a security policy",
+            "description": {
+              "content": "Patches the specified security policy with the data included in the request.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "global",
+                "securityPolicies",
+                ":securityPolicy"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "securityPolicy",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"rules\": [\n    {\n      \"priority\": \"<integer>\",\n      \"description\": \"<string>\",\n      \"match\": {\n        \"versionedExpr\": \"<string>\",\n        \"config\": {\n          \"srcIpRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        \"expr\": {\n          \"expression\": \"<string>\"\n        }\n      },\n      \"action\": \"<string>\",\n      \"preview\": \"<boolean>\"\n    },\n    {\n      \"priority\": \"<integer>\",\n      \"description\": \"<string>\",\n      \"match\": {\n        \"versionedExpr\": \"<string>\",\n        \"config\": {\n          \"srcIpRanges\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        \"expr\": {\n          \"expression\": \"<string>\"\n        }\n      },\n      \"action\": \"<string>\",\n      \"preview\": \"<boolean>\"\n    }\n  ],\n  \"type\": \"<string>\",\n  \"selfLink\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "45202060-9385-493e-b062-57373a891dc7",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "global",
+                    "securityPolicies",
+                    ":securityPolicy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "securityPolicy",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"rules\": [\n    {\n      \"priority\": 256,\n      \"description\": \"string\",\n      \"match\": {\n        \"versionedExpr\": \"SRC_IPS_V1\",\n        \"config\": {\n          \"srcIpRanges\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"expr\": {\n          \"expression\": \"string\"\n        }\n      },\n      \"action\": \"allow\",\n      \"preview\": true\n    },\n    {\n      \"priority\": 4728,\n      \"description\": \"string\",\n      \"match\": {\n        \"versionedExpr\": \"SRC_IPS_V1\",\n        \"config\": {\n          \"srcIpRanges\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"expr\": {\n          \"expression\": \"string\"\n        }\n      },\n      \"action\": \"deny(502)\",\n      \"preview\": false\n    }\n  ],\n  \"type\": \"<string>\",\n  \"selfLink\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"status\": \"string\",\n  \"targetLink\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c3247328-0082-4967-ad5e-236b6672c709",
+          "name": "Google Cloud Armor Delete a security policy",
+          "request": {
+            "name": "Google Cloud Armor Delete a security policy",
+            "description": {
+              "content": "Deletes the specified security policy.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "global",
+                "securityPolicies",
+                ":securityPolicy"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "securityPolicy",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3320b592-28a0-4faf-8424-2dcd7ee5d92e",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "global",
+                    "securityPolicies",
+                    ":securityPolicy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "securityPolicy",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"status\": \"string\",\n  \"targetLink\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://compute.googleapis.com/compute/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/compute https://www.googleapis.com/auth/cloud-platform"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "49a3b784-4c13-41e5-9c57-59d90f43968c",
+    "name": "Google Cloud Armor SecurityPolicies API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Provides programmatic access to manage security policies, rules, and threat intelligence configurations for protecting applications from DDoS attacks and web-based threats.\n\nContact Support:\n Name: Google Cloud",
+      "type": "text/plain"
+    }
+  }
+}
