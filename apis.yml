@@ -47,7 +47,7 @@ apis:
   humanURL: https://cloud.google.com/armor/docs
   baseURL: https://compute.googleapis.com/compute/v1
   tags:
-  - SecurityPolicies
+  - Security Policies
   tags_raw:
   - SecurityPolicies
   properties:
