@@ -41,28 +41,6 @@ tags:
   - Security
   - WAF
 apis:
-- aid: google-cloud-armor:google-cloud-armor-securitypolicies-api
-  name: Google Cloud Armor SecurityPolicies API
-  description: Manage security policies for Cloud Armor
-  humanURL: https://cloud.google.com/armor/docs
-  baseURL: https://compute.googleapis.com/compute/v1
-  tags:
-  - Security Policies
-  tags_raw:
-  - SecurityPolicies
-  properties:
-  - type: OpenAPI
-    url: openapi/google-cloud-armor-securitypolicies-api-openapi.yml
-  - type: Documentation
-    url: https://cloud.google.com/armor/docs/reference/rest
-  - type: Authentication
-    url: https://cloud.google.com/docs/authentication
-  - type: GettingStarted
-    url: https://cloud.google.com/armor/docs/configure-security-policies
-  - type: JSONSchema
-    url: json-schema/json-schema.yml
-  - type: JSONLDContext
-    url: json-ld/json-ld.yml
 - aid: google-cloud-armor:google-cloud-armor-securitypolicyrules-api
   name: Google Cloud Armor SecurityPolicyRules API
   description: Manage individual rules within security policies
@@ -73,6 +51,26 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/google-cloud-armor-securitypolicyrules-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/armor/docs/reference/rest
+  - type: Authentication
+    url: https://cloud.google.com/docs/authentication
+  - type: GettingStarted
+    url: https://cloud.google.com/armor/docs/configure-security-policies
+  - type: JSONSchema
+    url: json-schema/json-schema.yml
+  - type: JSONLDContext
+    url: json-ld/json-ld.yml
+- aid: google-cloud-armor:google-cloud-armor-security-policies-api
+  name: Google Cloud Armor Security Policies API
+  description: Manage security policies for Cloud Armor
+  humanURL: https://cloud.google.com/armor/docs
+  baseURL: https://compute.googleapis.com/compute/v1
+  tags:
+  - Security Policies
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-armor-security-policies-api-openapi.yml
   - type: Documentation
     url: https://cloud.google.com/armor/docs/reference/rest
   - type: Authentication
