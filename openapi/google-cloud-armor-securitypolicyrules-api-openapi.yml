@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Google Cloud Armor SecurityPolicies Security Policy Rules API
+  title: Google Cloud Armor Security Policy Rules API
   description: Provides programmatic access to manage security policies, rules, and threat intelligence configurations for protecting applications from DDoS attacks and web-based threats.
   version: v1
   contact:
