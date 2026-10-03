@@ -79,17 +79,6 @@ paths:
                 $ref: '#/components/schemas/Operation'
 components:
   schemas:
-    Operation:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        status:
-          type: string
-        targetLink:
-          type: string
     SecurityPolicyRule:
       type: object
       properties:
@@ -132,6 +121,17 @@ components:
         preview:
           type: boolean
           description: Whether the rule is in preview mode
+    Operation:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        status:
+          type: string
+        targetLink:
+          type: string
   securitySchemes:
     oauth2:
       type: oauth2
