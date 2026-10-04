@@ -184,6 +184,13 @@ components:
         preview:
           type: boolean
           description: Whether the rule is in preview mode
+    SecurityPolicyList:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/SecurityPolicy'
     Operation:
       type: object
       properties:
@@ -195,13 +202,6 @@ components:
           type: string
         targetLink:
           type: string
-    SecurityPolicyList:
-      type: object
-      properties:
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/SecurityPolicy'
     SecurityPolicy:
       type: object
       properties:
