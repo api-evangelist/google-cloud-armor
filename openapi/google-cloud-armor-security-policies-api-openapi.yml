@@ -142,6 +142,24 @@ paths:
                 $ref: '#/components/schemas/Operation'
 components:
   schemas:
+    Operation:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        status:
+          type: string
+        targetLink:
+          type: string
+    SecurityPolicyList:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/SecurityPolicy'
     SecurityPolicyRule:
       type: object
       properties:
@@ -184,24 +202,6 @@ components:
         preview:
           type: boolean
           description: Whether the rule is in preview mode
-    SecurityPolicyList:
-      type: object
-      properties:
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/SecurityPolicy'
-    Operation:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        status:
-          type: string
-        targetLink:
-          type: string
     SecurityPolicy:
       type: object
       properties:
